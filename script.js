@@ -1,5 +1,8 @@
 var map, pos, marker;
 
+window.onload = function (){
+    initMap();
+}
 
 function initMap(){
     
