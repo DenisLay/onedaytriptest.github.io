@@ -37,7 +37,7 @@ function success(position) {
   pos = {lat: position.coords.latitude, 
            lng: position.coords.longitude};
     
-    map.setCenter(pos);
+    map.setCenter(position);
     marker = new google.maps.Marker({position: pos, map: map, title: "You are here"});
     navigator.geolocation.clearWatch(id);
 }
