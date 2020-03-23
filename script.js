@@ -1,5 +1,7 @@
 var map, infoWindow, marker;
 
+alert("1");
+
 function initMap(){
     
     var pos = {lat: 50.449241, lng: 30.513511};
@@ -9,13 +11,6 @@ function initMap(){
     }
     
     var map = new google.maps.Map(document.getElementById("map"), options);
-    
-    /*if (navigator.geolocation){
-        alert("Geolocation is supported");
-    }
-    else{
-        alert("Geolocation is not supported");
-    }*/
     
     if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function (position){
