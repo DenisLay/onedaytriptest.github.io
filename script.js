@@ -19,19 +19,18 @@ function initMap(){
     
 }
 
-/*function geoloactionSuccess(position){
-    pos = {lat: position.coords.latitude, 
-           lng: position.coords.longitude};
-    
-    map.setCenter(pos);
-    marker = new google.maps.Marker({position: pos, map: map, title: "You are here"});
+setInterval(getLocation, 3000);
+
+function getLocation(){
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});
+    }
+    else{
+        alert("Geolocation is not supported!");
+    }
 }
 
-function geolocationFailure(positionError){
-    alert(positionError)
-}*/
-
-var id, options;
+//var id, options;
 
 function success(position) {
   pos = {lat: position.coords.latitude, 
@@ -39,7 +38,7 @@ function success(position) {
     
     map.setCenter(position);
     marker = new google.maps.Marker({position: pos, map: map, title: "You are here"});
-    navigator.geolocation.clearWatch(id);
+    //navigator.geolocation.clearWatch(id);
 }
 
 function error(err) {
@@ -47,10 +46,10 @@ function error(err) {
 }
 
 
-options = {
+/*options = {
   enableHighAccuracy: true,
   timeout: 5000,
   maximumAge: 1000
 };
 
-id = navigator.geolocation.watchPosition(success, error, options);
+id = navigator.geolocation.watchPosition(success, error, options);*/
