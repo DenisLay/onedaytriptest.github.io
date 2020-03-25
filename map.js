@@ -1,5 +1,14 @@
 var map, marker, pos;
 
+var butt = document.getElementById("bt");
+var coordField = document.getElementById("coords");
+function click(){
+    //document.write("<p>latitude: " + pos.lat + " longitude: " + pos.lng + "</p>");
+    coordField.innerText += pos.lat + " || " + pos.lng + "\n";
+}
+
+butt.onclick = click;
+
 window.onload = function(){
     initMap();
 }
