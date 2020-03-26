@@ -2,8 +2,8 @@ var map, marker, pos;
 
 var butt = document.getElementById("bt");
 var coordField = document.getElementById("coords");
+
 function click(){
-    //document.write("<p>latitude: " + pos.lat + " longitude: " + pos.lng + "</p>");
     coordField.innerText += pos.lat + " || " + pos.lng + "\n";
 }
 
@@ -19,9 +19,14 @@ function initMap(){
         center: new google.maps.LatLng(pos.lat, pos.lng),
         zoom: 14
     }
+    var geoOptions = {
+    enableHighAccuracy: true,
+        maximumAge: 2000,
+        timeout: 3000
+  }
     
     map = new google.maps.Map(document.getElementById("map"), opt);
-    navigator.geolocation.watchPosition(geoSuccess, geoError);
+    navigator.geolocation.watchPosition(geoSuccess, geoError, geoOptions);
 }
 
 function geoSuccess(position){
