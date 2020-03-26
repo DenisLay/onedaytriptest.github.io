@@ -21,8 +21,8 @@ function initMap(){
     }
     var geoOptions = {
     enableHighAccuracy: true,
-        maximumAge: 2000,
-        timeout: 3000
+        maximumAge: 100,
+        timeout: 100
   }
     
     map = new google.maps.Map(document.getElementById("map"), opt);
