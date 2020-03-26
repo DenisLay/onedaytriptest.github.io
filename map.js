@@ -1,4 +1,5 @@
 var map, marker, pos;
+var watchID;
 
 var butt = document.getElementById("bt");
 var coordField = document.getElementById("coords");
@@ -26,7 +27,7 @@ function initMap(){
   }
     
     map = new google.maps.Map(document.getElementById("map"), opt);
-    navigator.geolocation.watchPosition(geoSuccess, geoError, geoOptions);
+    watchID = navigator.geolocation.watchPosition(geoSuccess, geoError, geoOptions);
 }
 
 function geoSuccess(position){
