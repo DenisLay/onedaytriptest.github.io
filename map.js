@@ -23,8 +23,8 @@ function initMap(){
     }
     var geoOptions = {
     enableHighAccuracy: true,
-        maximumAge: 100,
-        timeout: 100
+        maximumAge: 1000,
+        timeout: 1000
   }
     
     map = new google.maps.Map(document.getElementById("map"), opt);
@@ -36,6 +36,7 @@ function geoSuccess(position){
     //var time = new Date().getTime() / 1000;
     //pos = {lat: position.coords.latitude + (Math.sin(time) * radius), lng: position.coords.longitude + (Math.cos(time) * radius)};
     map.setCenter(pos);
+    alert(position.coords.accuracy);
     marker = new google.maps.Marker( {position: pos, map: map} );
 }
 
