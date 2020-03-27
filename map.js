@@ -33,7 +33,7 @@ function initMap(){
 
 function geoSuccess(position){
     //pos = {lat: position.coords.latitude, lng: position.coords.longitude};
-    var time = new Date().getTime / 1000;
+    var time = new Date().getTime() / 1000;
     pos = {lat: position.coords.latitude + (Math.sin(time) * radius), lng: position.coords.longitude + (Math.cos(time) * radius)};
     map.setCenter(pos);
     marker = new google.maps.Marker( {position: pos, map: map} );
