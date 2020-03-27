@@ -1,5 +1,6 @@
 var map, marker, pos;
 var watchID;
+var circle;
 var radius = 0.01;
 
 var butt = document.getElementById("bt");
@@ -38,6 +39,7 @@ function geoSuccess(position){
     map.setCenter(pos);
     alert(position.coords.accuracy);
     marker = new google.maps.Marker( {position: pos, map: map} );
+    circle.setMap(null);
     drawCircle(pos, position.coords.accuracy);
 }
 
@@ -46,7 +48,7 @@ function geoError(position){
 }
 
 function drawCircle(center, radius){
-    var circle = new google.maps.Circle({
+    circle = new google.maps.Circle({
         strokeColor: '#FF0000',
       strokeOpacity: 0.8,
       strokeWeight: 1,
