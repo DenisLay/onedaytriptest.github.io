@@ -37,18 +37,18 @@ function geoSuccess(position){
     //var time = new Date().getTime() / 1000;
     //pos = {lat: position.coords.latitude + (Math.sin(time) * radius), lng: position.coords.longitude + (Math.cos(time) * radius)};
     map.setCenter(pos);
-    alert(position.coords.accuracy);
     marker = new google.maps.Marker( {position: pos, map: map} );
-    if (circle != null)
+    
+    if (circle != undefined)
         circle.setMap(null);
-    drawCircle(pos, position.coords.accuracy);
+    drawCircle(circle, pos, position.coords.accuracy);
 }
 
 function geoError(position){
     console.log("error");
 }
 
-function drawCircle(center, radius){
+function drawCircle(circle, center, radius){
     circle = new google.maps.Circle({
         strokeColor: '#FF0000',
       strokeOpacity: 0.8,
