@@ -1,6 +1,6 @@
 var map, marker, pos;
 var watchID;
-var circle;
+var circle = new google.maps.Circle;
 var radius = 0.01;
 
 var butt = document.getElementById("bt");
