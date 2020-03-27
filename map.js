@@ -1,6 +1,6 @@
 var map, marker, pos;
 var watchID;
-var radius = 0.05;
+var radius = 0.01;
 
 var butt = document.getElementById("bt");
 var coordField = document.getElementById("coords");
