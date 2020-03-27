@@ -38,8 +38,22 @@ function geoSuccess(position){
     map.setCenter(pos);
     alert(position.coords.accuracy);
     marker = new google.maps.Marker( {position: pos, map: map} );
+    drawCircle(pos, position.coords.accuracy);
 }
 
 function geoError(position){
     console.log("error");
+}
+
+function drawCircle(center, radius){
+    var circle = new google.maps.Circle({
+        strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 1,
+      fillColor: '#FF0000',
+      fillOpacity: 0.15,
+      map: map,
+      center: center,
+      radius: radius
+    });
 }
