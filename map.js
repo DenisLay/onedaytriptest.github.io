@@ -24,8 +24,8 @@ function initMap(){
     }
     var geoOptions = {
     enableHighAccuracy: true,
-        maximumAge: 1000,
-        timeout: 1000
+        maximumAge: 100,
+        timeout: 100
   }
     
     map = new google.maps.Map(document.getElementById("map"), opt);
@@ -39,9 +39,9 @@ function geoSuccess(position){
     map.setCenter(pos);
     marker = new google.maps.Marker( {position: pos, map: map} );
     
-    if (circle != undefined)
+    if (circle != null)
         circle.setMap(null);
-    drawCircle(circle, pos, position.coords.accuracy);
+    drawCircle(circle, pos, position.coords.accuracy / 2);
 }
 
 function geoError(position){
